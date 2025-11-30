@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "longin-redirect", value = "/auth/login")
+@WebServlet(name = "login-redirect", value = "/auth/login")
 public class LoginRedirection extends HttpServlet {
 
     @Override
