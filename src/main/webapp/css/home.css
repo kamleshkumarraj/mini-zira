@@ -1,0 +1,356 @@
+/* ==========================================================================
+   MINI ZIRA – COMPLETE PREMIUM DARK THEME
+   Glassmorphism • Gradient • Modern SaaS • Attractive • Cool
+   ========================================================================== */
+
+/* COLORS ------------------------------------------------------------ */
+:root {
+    --bg: #0d1117;
+    --bg2: #111821;
+    --glass: rgba(255,255,255,0.06);
+    --text: #e8edf4;
+    --text-muted: #9aa6b8;
+    --accent: #00e0c8;
+    --accent-soft: rgba(0,224,200,0.16);
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.08);
+    --shadow: 0 0 40px rgba(0,0,0,0.45);
+}
+
+/* GLOBAL ------------------------------------------------------------ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: Inter, system-ui, sans-serif;
+    background: linear-gradient(135deg, var(--bg), var(--bg2));
+    color: var(--text);
+}
+.page-wrap { max-width: 1250px; margin: auto; padding: 30px; }
+a { text-decoration: none; color: var(--accent); }
+
+/* TITLES ------------------------------------------------------------ */
+h1,h2,h3,h4 { margin: 0; font-weight: 700; color: var(--text); }
+p { color: var(--text-muted); }
+
+/* BUTTONS ----------------------------------------------------------- */
+.btn {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+.btn.primary {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 14px var(--accent-soft);
+}
+.btn.primary:hover { transform: translateY(-3px) scale(1.03); }
+.btn.ghost {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+}
+.btn.outline {
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+}
+
+/* ==================================================================
+   HERO – TWO SIDED + GLASS + GRADIENT + GLOW
+   ================================================================== */
+.hero {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f141a 0%, #141c26 50%, #0d1117 100%);
+}
+
+/* radial glow background */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 1200px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(0,224,200,0.20), transparent 70%);
+    right: -200px;
+    top: -200px;
+    filter: blur(50px);
+    z-index: 0;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-left { flex: 1.2; }
+.hero-left h1 {
+    font-size: 2.8rem;
+    line-height: 1.22;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.lead {
+    font-size: 1.15rem;
+    margin: 18px 0 26px;
+    color: var(--text-muted);
+}
+
+.hero-features {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin: 26px 0;
+}
+.hero-features li {
+    padding: 14px 16px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+    border-radius: 14px;
+}
+
+.hero-cta { display: flex; gap: 16px; margin-top: 20px; }
+
+/* STATS */
+.trust {
+    display: flex;
+    gap: 22px;
+    margin-top: 28px;
+}
+.stat {
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+.stat .num {
+    font-size: 1.4rem;
+    color: var(--accent);
+}
+
+/* RIGHT IMAGE – GLASS MOCKUP -------------------------------------- */
+.hero-right { flex: 1; display: flex; justify-content: center; }
+
+.mockup {
+    width: 100%;
+    padding: 20px;
+    border-radius: 22px;
+
+    background: var(--glass);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(24px);
+}
+
+.mockup img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+/* FLOATING CARD */
+.mini-card {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    width: 230px;
+    padding: 14px;
+
+    background: rgba(0,0,0,0.55);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow);
+}
+.progress { height: 8px; background: #444; border-radius: 10px; margin: 8px 0; }
+.progress div {
+    width: 70%;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+/* ==================================================================
+   FEATURES
+   ================================================================== */
+.features { padding: 70px 0; }
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 26px;
+}
+.feature {
+    padding: 26px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+    transition: 0.25s ease;
+}
+.feature:hover { transform: translateY(-6px); }
+
+.feature img { width: 55px; }
+
+/* ==================================================================
+   WORKFLOW
+   ================================================================== */
+.workflow .step {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 16px;
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow);
+}
+.step .num {
+    width: 55px;
+    height: 55px;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==================================================================
+   SCREENSHOTS
+   ================================================================== */
+.screen-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+.screen-item {
+    padding: 16px;
+    background: var(--glass);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow);
+}
+.screen-item img {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ==================================================================
+   PRICING
+   ================================================================== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 26px;
+}
+.price-card {
+    padding: 30px;
+    background: var(--glass);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+.price-card .price {
+    font-size: 1.9rem;
+    color: var(--accent);
+}
+
+/* ==================================================================
+   TESTIMONIALS
+   ================================================================== */
+.testimonial-item {
+    display: none;
+    padding: 26px;
+    background: var(--glass);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow);
+}
+.testimonial-item.active { display: block; }
+
+.testimonial-controls button {
+    width: 12px;
+    height: 12px;
+    background: var(--border);
+    border-radius: 50%;
+}
+
+/* ==================================================================
+   FAQ
+   ================================================================== */
+.faq-item {
+    padding: 22px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
+}
+.faq-q {
+    background: none;
+    border: none;
+    width: 100%;
+    color: var(--text);
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.panel p { color: var(--text-muted); }
+
+/* ==================================================================
+   CONTACT
+   ================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    outline: none;
+    backdrop-filter: blur(18px);
+}
+
+/* ==================================================================
+   RESPONSIVE
+   ================================================================== */
+@media (max-width:1100px){
+    .hero-inner { flex-direction: column; text-align: center; }
+    .mockup { width: 80%; }
+}
+@media (max-width:780px){
+    .features-grid,
+    .pricing-grid,
+    .screen-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width:580px){
+    .features-grid,
+    .pricing-grid,
+    .screen-grid,
+    .contact-grid { grid-template-columns: 1fr; }
+    .mockup { width: 100%; }
+}

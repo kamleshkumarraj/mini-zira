@@ -1,0 +1,177 @@
+/* ==========================================================================
+   MINI ZIRA – HEAVY PREMIUM NAVBAR
+   Glassmorphism • Gradient • Glow • Modern SaaS
+   ========================================================================== */
+
+:root {
+    --bg: #0d1117;
+    --glass: rgba(255,255,255,0.06);
+    --glass-dark: rgba(10,15,20,0.55);
+    --text: #e8eef4;
+    --text-muted: #9aa6b8;
+    --accent: #00e0c8;
+    --accent-soft: rgba(0,224,200,0.18);
+    --border: rgba(255,255,255,0.09);
+}
+
+/* NAVBAR WRAPPER ---------------------------------------------------- */
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+
+    /* beautiful gradient glass background */
+    background: linear-gradient(135deg, rgba(18,25,33,0.72), rgba(10,15,20,0.72));
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+}
+
+/* NAV CONTAINER ----------------------------------------------------- */
+.nav-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 14px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO -------------------------------------------------------------- */
+.logo {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+    color: var(--accent);
+
+    text-shadow: 0 0 16px var(--accent-soft);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+    text-shadow: 0 0 25px var(--accent);
+}
+
+/* NAVIGATION LINKS -------------------------------------------------- */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: .3px;
+    position: relative;
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--accent);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* LOGIN BUTTON ------------------------------------------------------ */
+.login-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    background: var(--accent);
+    color: #000;
+
+    box-shadow: 0 0 20px var(--accent-soft);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 28px var(--accent);
+}
+
+/* AVATAR ------------------------------------------------------------ */
+.avatar-box {
+    position: relative;
+    cursor: pointer;
+}
+
+.avatar-box img {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+
+    box-shadow: 0 0 16px var(--accent-soft);
+    transition: 0.3s;
+}
+
+.avatar-box:hover img {
+    transform: scale(1.12);
+    box-shadow: 0 0 25px var(--accent);
+}
+
+/* DROPDOWN ---------------------------------------------------------- */
+.dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 200px;
+
+    background: var(--glass-dark);
+    padding: 12px 0;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+
+    display: none;
+    flex-direction: column;
+
+    backdrop-filter: blur(22px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.45);
+
+    animation: dropdownFade 0.35s ease forwards;
+}
+
+.avatar-box:hover .dropdown {
+    display: flex;
+}
+
+.dropdown a {
+    padding: 12px 20px;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.dropdown a:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+/* DROPDOWN ANIMATION */
+@keyframes dropdownFade {
+    0% { opacity: 0; transform: translateY(-12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
