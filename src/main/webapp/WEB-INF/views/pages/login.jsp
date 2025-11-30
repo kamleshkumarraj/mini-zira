@@ -42,7 +42,7 @@
 
             <button type="submit" class="login-btn">Login</button>
 
-            <p class="register-link">Don't have an account? <a href="register.jsp">Create Now</a></p>
+            <p class="register-link">Don't have an account? <a href="register">Create Now</a></p>
 
         </form>
 

@@ -26,7 +26,7 @@
 
             <% if(user == null){ %>
 
-            <button class="login-btn" onclick="location.href='login.jsp'">
+            <button  class="login-btn" onclick="location.href='<%= request.getContextPath() %>/auth/login'">
                 Login
             </button>
 
