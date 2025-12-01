@@ -32,8 +32,10 @@ public class Register extends HttpServlet {
             AuthServiceImpl auth = new AuthServiceImpl();
             boolean res = auth.registerUser(fullName, email, username, password, role);
             if(res == true){
-                req.setAttribute("message", "Register Successfully");
-                rd.include(req, resp);
+//                req.setAttribute("message", "Register Successfully");
+
+                resp.sendRedirect((req.getContextPath()+"/auth/login?registered=true"));
+//                rd.include(req, resp);
             }else{
                 req.setAttribute("message", "Register Failed");
                 rd.include(req, resp);

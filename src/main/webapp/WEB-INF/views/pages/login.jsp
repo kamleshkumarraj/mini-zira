@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,8 @@
     <title>MiniZira – Login</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/login.css">
 </head>
+
+
 
 <body>
 
@@ -51,4 +55,16 @@
 </div>
 
 </body>
+
+<script >
+    const url = new URLSearchParams(window.location.search);
+    const registered = url.get("registered");
+    console.log(registered)
+    console.log(url);
+    if(registered){
+        alert("User registered successfully.")
+        history.replaceState(null, "", "<%= request.getContextPath() %>/auth/login");
+    }
+
+</script>
 </html>
