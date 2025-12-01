@@ -17,7 +17,7 @@ public class HibernateConfig {
             Configuration configuration = new Configuration();
             Properties properties = new Properties();
             properties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-            properties.put(Environment.URL, "jdbc:mysql//localhost:3306/mini-zira");
+            properties.put(Environment.URL, "jdbc:mysql://localhost:3306/mini_zira");
             properties.put(Environment.USER, "root");
             properties.put(Environment.PASS, "KamleshKumar8603416388@#");
             properties.put(Environment.SHOW_SQL, "true");
