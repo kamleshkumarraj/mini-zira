@@ -1,4 +1,4 @@
-package com.mini_zira.service.users;
+package com.mini_zira.services.users;
 
 import com.mini_zira.entities.Users;
 

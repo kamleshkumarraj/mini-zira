@@ -4,6 +4,7 @@ import com.mini_zira.entities.Users;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 public class UserDaoImpl implements  UserDao{
     private SessionFactory sessionFactory;
@@ -46,5 +47,26 @@ public class UserDaoImpl implements  UserDao{
     @Override
     public Users getUserById(Long id) {
         return null;
+    }
+
+    public Users getUserByEmail(String email) {
+      try{
+          Session session = sessionFactory.openSession();
+
+          Transaction tx = session.beginTransaction();
+
+          Query q = session.createQuery("from Users where email=:email");
+          q.setParameter("email", email);
+
+          Users user = (Users) q.uniqueResult();
+
+          tx.commit();
+          session.close();
+          sessionFactory.close();
+          return user;
+      } catch (Exception e) {
+          e.printStackTrace();
+          return null;
+      }
     }
 }

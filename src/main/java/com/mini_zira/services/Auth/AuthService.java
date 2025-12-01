@@ -1,6 +1,4 @@
-package com.mini_zira.service.Auth;
-
-import com.mini_zira.entities.Users;
+package com.mini_zira.services.Auth;
 
 public interface AuthService {
     boolean registerUser(String fullName, String email, String username, String password, String role);

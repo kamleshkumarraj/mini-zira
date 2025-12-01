@@ -1,6 +1,6 @@
 package com.mini_zira.controllers.auth;
 
-import com.mini_zira.service.Auth.AuthServiceImpl;
+import com.mini_zira.services.Auth.AuthServiceImpl;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

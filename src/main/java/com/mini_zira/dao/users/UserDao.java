@@ -8,5 +8,6 @@ public interface UserDao {
     boolean updateUser(Long id, String fullName, String email, String username, String password, String role);
     boolean deleteUser(Long id);
     Users getUserById(Long id);
+    Users getUserByEmail(String email);
 
 }
