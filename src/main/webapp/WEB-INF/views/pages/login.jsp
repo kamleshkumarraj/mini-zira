@@ -30,7 +30,7 @@
     <!-- RIGHT SIDE LOGIN FORM -->
     <div class="right-panel">
 
-        <form action="login" method="post" class="login-box">
+        <form action="<%= request.getContextPath() %>/login" method="post" enctype="application/x-www-form-urlencoded" class="login-box">
 
             <h2 class="title">Login</h2>
 

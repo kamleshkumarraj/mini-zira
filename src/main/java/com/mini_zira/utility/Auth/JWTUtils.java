@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class JWTUtils {
     private static final Algorithm algorithm = Algorithm.HMAC256(JWTConstraints.JWT_SECRET);
-    public static String generateToken(String userId, String email){
+    public static String generateToken(Long userId, String email){
         return  JWT.create()
                 .withIssuer(JWTConstraints.JWT_ISSUER)
                 .withClaim("id", userId)

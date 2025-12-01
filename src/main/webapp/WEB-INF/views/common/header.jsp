@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-    String user = (String) session.getAttribute("username");
-    String avatar = (String) session.getAttribute("userAvatar");
+    String fullName = (String) request.getAttribute("fullName");
+    String email = (String) request.getAttribute("email");
 %>
 
 
@@ -24,7 +24,7 @@
         <!-- Right Side -->
         <div class="right">
 
-            <% if(user == null){ %>
+            <% if(email == null){ %>
 
             <button  class="login-btn" onclick="location.href='<%= request.getContextPath() %>/auth/login'">
                 Login
@@ -33,10 +33,10 @@
             <% } else { %>
 
             <div class="avatar-box">
-                <img src="<%= avatar != null ? avatar : "https://cdn-icons-png.flaticon.com/512/149/149071.png" %>" />
+                <div style="width: 40px; height: 40px; border-radius: 50%; font-size: 28px; background: cyan; color: red; text-align: center; font-weight: bold" > <%= fullName.charAt(0)%> </div>
 
-                <div class="dropdown">
-                    <a href="#">👤 <%= user %></a>
+                <div style="top: 40px; right: -80px" class="dropdown">
+                    <a href="#">👤 <%= fullName %></a>
                     <a href="profile.jsp">Profile</a>
                     <a href="settings.jsp">Settings</a>
                     <a href="logout">Logout</a>

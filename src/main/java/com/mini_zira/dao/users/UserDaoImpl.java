@@ -62,7 +62,6 @@ public class UserDaoImpl implements  UserDao{
 
           tx.commit();
           session.close();
-          sessionFactory.close();
           return user;
       } catch (Exception e) {
           e.printStackTrace();

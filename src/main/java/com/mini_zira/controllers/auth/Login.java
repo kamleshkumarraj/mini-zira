@@ -18,18 +18,18 @@ public class Login extends HttpServlet {
 
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        String role = req.getParameter("role");
+        String role = "USER";
 
         RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/views/pages/login.jsp");
 
-        if(email.isEmpty() || password.isEmpty() || role.isEmpty()){
+        if(!(email != null && password != null && role != null)){
             req.setAttribute("error","Please fill all the fields");
             rd.include(req, resp);
             return;
         }
 
         AuthServiceImpl auth = new AuthServiceImpl();
-        boolean res = auth.loginUser(email, password);
+        boolean res = auth.loginUser(req, resp);
 
         if(res == true){
             req.getSession().setAttribute("login", "login-user");
