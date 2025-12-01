@@ -67,7 +67,7 @@
 
             <button type="submit" class="register-btn">Create Account</button>
 
-            <p class="login-link">Already have an account? <a href="<%= request.getContextPath() %>/app/login">Login</a></p>
+            <p class="login-link">Already have an account? <a href="login">Login</a></p>
 
         </form>
 
