@@ -44,6 +44,13 @@
           <version>0.4</version>
       </dependency>
 
+      <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
+      <dependency>
+          <groupId>com.auth0</groupId>
+          <artifactId>java-jwt</artifactId>
+          <version>4.5.0</version>
+      </dependency>
+
   </dependencies>
   <build>
     <finalName>mini_zira</finalName>

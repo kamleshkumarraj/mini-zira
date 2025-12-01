@@ -1,16 +1,16 @@
 package com.mini_zira.controllers.auth;
 
 import com.mini_zira.service.Auth.AuthServiceImpl;
-import com.mini_zira.service.users.UserService;
-import com.mini_zira.service.users.UserServiceImpl;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+@WebServlet(name = "login-controller", value = "/login")
 public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
