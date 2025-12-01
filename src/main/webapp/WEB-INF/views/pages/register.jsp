@@ -1,3 +1,4 @@
+<%@ page import="java.io.PrintWriter" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -12,6 +13,15 @@
 
 <div class="register-wrapper">
 
+    <%
+        String message = (String) request.getAttribute("message");
+        String error = (String) request.getAttribute("error");
+
+
+    %>
+
+    <%= message %>
+    <%= error%>
     <!-- LEFT SIDE STATIC PANEL -->
     <div class="left-panel">
         <h1>Create Your MiniZira Account 🚀</h1>
@@ -26,28 +36,26 @@
     <!-- RIGHT SIDE FORM PANEL -->
     <div class="right-panel">
 
-        <form action="register" method="post" enctype="multipart/form-data" class="register-box">
+        <form action="<%= request.getContextPath()%>/register" method="post" enctype="application/x-www-form-urlencoded" class="register-box">
 
             <h2 class="title">Register</h2>
 
-            <!-- AVATAR PREVIEW -->
-            <div class="avatar-section">
-                <img id="avatarPreview" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
-                <label class="upload-btn">
-                    Upload Avatar
-                    <input type="file" name="avatar" accept="image/*" onchange="previewAvatar(event)">
-                </label>
-            </div>
+
 
             <!-- INPUT FIELDS -->
             <div class="input-group">
                 <label>Full Name</label>
-                <input type="text" name="fullname" required>
+                <input type="text" name="fullName" required>
             </div>
 
             <div class="input-group">
                 <label>Username</label>
                 <input type="text" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Role</label>
+                <input type="text" name="role" required>
             </div>
 
             <div class="input-group">
@@ -81,6 +89,8 @@
         const img = document.getElementById("avatarPreview");
         img.src = URL.createObjectURL(event.target.files[0]);
     }
+
+
 </script>
 
 </body>

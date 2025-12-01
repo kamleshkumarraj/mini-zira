@@ -34,7 +34,7 @@ public class Users {
 
     // 🔥 SELF-REFERENCING FK (Many employees -> one manager)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "manager_id", referencedColumnName = "id")
+    @JoinColumn(name = "manager_id", referencedColumnName = "_id")
     private Users manager;
 
     // 🔥 Reverse mapping: One manager → many employees
@@ -46,11 +46,7 @@ public class Users {
     private String role = "USER";
 
     // STATUS FLAGS
-    @Column(name = "is_active")
-    private Boolean isActive = true;
 
-    @Column(name = "is_deleted")
-    private Boolean isDeleted = false;
 
     // AUDIT FIELDS
     @Column(name = "created_at", updatable = false)
@@ -125,19 +121,7 @@ public class Users {
         this.role = role;
     }
 
-    public Boolean getIsActive() {
-        return isActive;
-    }
-    public void setIsActive(Boolean active) {
-        isActive = active;
-    }
 
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-    public void setIsDeleted(Boolean deleted) {
-        isDeleted = deleted;
-    }
 
     public Timestamp getCreatedAt() {
         return createdAt;

@@ -16,6 +16,7 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        super.doPost(req, resp);
+        System.out.println("register routing running...");
 
         String fullName = req.getParameter("fullName");
         String email = req.getParameter("email");
@@ -24,6 +25,7 @@ public class Register extends HttpServlet {
         String confirmPassword = req.getParameter("confirmPassword");
         String role = req.getParameter("role");
 
+        System.out.println("fullName: " + fullName);
         RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/views/pages/register.jsp");
 
         if(password.equals(confirmPassword)) {
