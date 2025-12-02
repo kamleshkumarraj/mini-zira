@@ -15,7 +15,7 @@
         <div class="nav-links">
             <a href="dashboard.jsp">Dashboard</a>
             <a href="projects.jsp">Projects</a>
-            <a href="tasks.jsp">Tasks</a>
+            <a href="<%= request.getContextPath()%>/app/sprints">Tasks</a>
             <a href="teams.jsp">Teams</a>
             <a href="issues.jsp">Issues</a>
             <a href="reports.jsp">Reports</a>
@@ -37,8 +37,8 @@
 
                 <div style="top: 40px; right: -80px" class="dropdown">
                     <a href="#">👤 <%= fullName %></a>
-                    <a href="profile.jsp">Profile</a>
-                    <a href="settings.jsp">Settings</a>
+                    <a href="profile">Profile</a>
+                    <a href="settings">Settings</a>
                     <a href="logout">Logout</a>
                 </div>
             </div>
