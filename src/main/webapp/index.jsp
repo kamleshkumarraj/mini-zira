@@ -1,7 +1,7 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="/mini-zira/home">Go to home</a>
+<a href="<%= request.getContextPath()%>/app/home">Go to home</a>
 </body>
 
 </html>

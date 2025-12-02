@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "home-servlet", value = "/home")
+@WebServlet(name = "home-servlet", value = "/app/home")
 public class Home extends HttpServlet {
 
     @Override

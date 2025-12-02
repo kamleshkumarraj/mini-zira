@@ -24,6 +24,7 @@ public class AuthServiceImpl implements  AuthService{
     public boolean loginUser(HttpServletRequest req, HttpServletResponse res) {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        String role = req.getParameter("role");
 
         Users user = userDao.getUserByEmail(email);
 
@@ -34,7 +35,7 @@ public class AuthServiceImpl implements  AuthService{
             return false;
         }
 
-        if(!user.getRole().equals("USER")){
+        if(!user.getRole().equals(role)){
             return false;
         }
 
