@@ -19,6 +19,7 @@ public class IsLoggedIn implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         // first we get token.
+        System.out.println("authorization filter running...");
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         String token = CookieUtils.getCookie(req, "token");
@@ -31,7 +32,7 @@ public class IsLoggedIn implements Filter {
 
         DecodedJWT jwt = JWTUtils.verifyToken(token);
         if(jwt == null){
-            req.getSession().setAttribute("message", "please login to access this resource !");
+            req.getSession().setAttribute("login-message", "please login to access this resource !");
             resp.sendRedirect(req.getContextPath() + "/auth/login");
             return;
         }
