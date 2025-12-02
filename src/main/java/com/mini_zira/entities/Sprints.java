@@ -31,8 +31,11 @@ public class Sprints {
     private Users assignedTo;
 
     // 🔥 Sprint dates
+    @Column(name = "start_date")
     private Date startDate;
+    @Column(name = "end_date")
     private Date endDate;
+    @Column(name = "max_deadline")
     private Date maxDeadline;
 
     // 🔥 Auto timestamps managed by entity methods
