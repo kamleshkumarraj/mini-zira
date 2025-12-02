@@ -44,6 +44,17 @@
                 <input type="password" name="password" required>
             </div>
 
+            <div class="input-group">
+                <label id="role" >Role</label>
+                <select id="role" style="padding: 14px; width: 100%; border-radius: 12px; font-size: 1rem; background: rgba(255,255,255,0.06);
+    outline: none; border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.95); backdrop-filter: blur(14px);
+    transition: 0.25s ease;" name="role" >
+                    <option style="color: black">USER</option>
+                    <option style="color: black">PROJECT_MANAGER</option>
+                    <option style="color: black">ADMIN</option>
+                </select>
+            </div>
+
             <button type="submit" class="login-btn">Login</button>
 
             <p class="register-link">Don't have an account? <a href="register">Create Now</a></p>

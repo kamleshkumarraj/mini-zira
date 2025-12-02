@@ -18,7 +18,7 @@ public class Login extends HttpServlet {
 
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        String role = "USER";
+        String role = req.getParameter("role");
 
         RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/views/pages/login.jsp");
 
@@ -33,7 +33,7 @@ public class Login extends HttpServlet {
 
         if(res == true){
             req.getSession().setAttribute("login", "login-user");
-            resp.sendRedirect((req.getContextPath()+"/home"));
+            resp.sendRedirect((req.getContextPath()+"/app/home"));
         }else{
             req.setAttribute("error","Get Error during login");
             rd.include(req, resp);
